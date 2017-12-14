@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA;;;;;;;;;;sBAUuB;EACnB,KAAK,EAfG,OAAO;;AAkBnB;;;gBAGiB;EACb,MAAM,EAAE,iBAAoB;;AAGhC,uCAAwC;EACpC,WAAW,EAAE,iBAAoB;;AAGrC;;;;;;;;;;;;;;WAcY;EACR,gBAAgB,EA5CR,OAAO;;AA+CnB,0CAA2C;EACvC,UAAU,EAAE,iBAAoB;;AAGpC,yCAA0C;EACtC,UAAU,EAAE,+EAAiE",
+"sources": ["../sass/green-color.scss"],
+"names": [],
+"file": "green-color.css"
+}

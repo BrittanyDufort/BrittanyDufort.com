@@ -1,0 +1,40 @@
+/*
+	@package manisa
+*/
+
+/*
+	Mixins
+	------------------------------------------------
+*/
+
+@mixin animate ( $attr, $time, $trans){
+    -webkit-transition: $attr $time $trans;
+    -moz-transition: $attr $time $trans;
+    -ms-transition: $attr $time $trans;
+    -o-transition: $attr $time $trans;
+    transition: $attr $time $trans;
+}
+
+@mixin transform( $val ) {
+    -webkit-transform: $val;
+    -moz-transform: $val;
+    -ms-transform: $val;
+    -o-transform: $val;
+    transform: $val;
+}
+
+@mixin box-sizing {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin border-radius( $val ) {
+    -webkit-border-radius: $val;
+    -moz-border-radius: $val;
+    -ms-border-radius: $val;
+    -o-border-radius: $val;
+    border-radius: $val;
+}

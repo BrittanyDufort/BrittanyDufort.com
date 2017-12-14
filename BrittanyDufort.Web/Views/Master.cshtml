@@ -1,0 +1,254 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Master>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- meta Data -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title -->
+    <title>Manisa - Personal One Page Template</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!--        <link rel="stylesheet" href="css/vertical-nav.css" />-->
+    <!--        <link rel="stylesheet" href="css/panel-nav.css" />-->
+    <link rel="stylesheet" href="css/light_template.css" />
+    <link rel="stylesheet" href="css/default-color.css" />
+    <link rel="stylesheet" href="css/manisa-icon.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="css/lightbox.min.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+
+    <!-- google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Pattaya|Poppins:300,300i,400" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+        // Ajax function
+
+        function _(id) {
+
+            return document.getElementById(id);
+
+        }
+
+        function submitForm() {
+
+            _("btn").disabled = true;
+            _("status").innerHTML = 'please wait ...';
+
+            var formdata = new FormData(),
+                ajax = new XMLHttpRequest();
+
+            formdata.append("name", _("name").value);
+            formdata.append("email", _("email").value);
+            formdata.append("phone", _("phone").value);
+            formdata.append("msg", _("msg").value);
+
+            ajax.open("POST", "contact.php");
+            ajax.onreadystatechange = function () {
+
+                if (ajax.readyState === 4 && ajax.status === 200) {
+
+                    if (ajax.responseText === "success") {
+
+                        _("my_form").innerHTML = '<h2>Thanks ' + _("name").value + ',<br> <br> your message has been sent.</h2>';
+
+                    } else {
+
+                        _("status").innerHTML = ajax.responseText;
+                        _("btn").disabled = false;
+
+                    }
+                }
+            };
+
+            ajax.send(formdata);
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Start Section Tool Box -->
+
+    <div class="option-box">
+        <div class="color-option">
+            <ul class="list-unstyled colors">
+                <li data-value="css/default-color.css"></li>
+                <li data-value="css/brown-color.css"></li>
+                <li data-value="css/green-color.css"></li>
+                <li data-value="css/pink-color.css"></li>
+                <li data-value="css/golden-color.css"></li>
+                <li data-value="css/orange-color.css"></li>
+                <li data-value="css/blue-color.css"></li>
+                <li data-value="css/azure-color.css"></li>
+            </ul>
+            <ul class="list-unstyled dl">
+                <li class="dark-template" data-value="css/dark_template.css"> <span>Dark</span> </li>
+                <li class="light-template" data-value="css/light_template.css"> <span>Light</span> </li>
+            </ul>
+        </div>
+        <i class="fa fa-gear fa-3x gear-check"></i>
+    </div>
+
+    <!-- End Section Tool Box -->
+    <!-- Start Social Media -->
+
+    <div class="social-media d-none d-md-block">
+        <a href="https://www.facebook.com/" target="_blank"><i class="manisa-facebook"></i></a> <!-- You Can Edit the link here -->
+        <a href="https://www.twitter.com/" target="_blank"><i class="manisa-twitter"></i></a> <!-- You Can Edit the link here -->
+        <a href="https://www.tumblr.com/" target="_blank"><i class="manisa-tumblr"></i></a> <!-- You Can Edit the link here -->
+        <a href="https://www.youtube.com/" target="_blank"><i class="manisa-youtube"></i></a> <!-- You Can Edit the link here -->
+        <a href="https://www.dribbble.com/" target="_blank"><i class="manisa-dribbble"></i></a> <!-- You Can Edit the link here -->
+    </div>
+
+    <!-- End Social Media -->
+    <!-- Start Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+
+        <div class="container">
+            <a href="#">
+                <span class="bg_logo"></span>
+                <!-- You Can Edit the image on main.css file just search ( bg_logo ) -->
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="menu">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </div>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#header" data-value="header" class="active-nav">
+                            <i class="manisa-home" hidden></i>
+                            <span class="name-menu">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" data-value="about">
+                            <i class="manisa-male-user" hidden></i>
+                            <span class="name-menu">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#serv" data-value="serv">
+                            <i class="manisa-layers" hidden></i>
+                            <span class="name-menu">Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" data-value="portfolio">
+                            <i class="manisa-picture" hidden></i>
+                            <span class="name-menu">Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" data-value="blog">
+                            <i class="manisa-note" hidden></i>
+                            <span class="name-menu">Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" data-value="contact">
+                            <i class="manisa-envelope" hidden></i>
+                            <span class="name-menu">Contact</span>
+                        </a>
+                    </li>
+                    <li class="nav-item collapse-menu" hidden>
+                        <span class="collapse-icon closed-menu"></span>
+                        <span class="collapse-name">Collapse Menu</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-toggle">
+        <div class="menu">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
+    @RenderBody()
+
+    <!-- Start Footer -->
+    <footer class="text-center">
+        <div class="footer-content">
+            <div class="social-media-footer">
+                <a href="https://www.facebook.com/" target="_blank"><i class="manisa-facebook"></i></a> <!-- You Can Edit the link here -->
+                <a href="https://www.twitter.com/" target="_blank"><i class="manisa-twitter"></i></a> <!-- You Can Edit the link here -->
+                <a href="https://www.tumblr.com/" target="_blank"><i class="manisa-tumblr"></i></a> <!-- You Can Edit the link here -->
+                <a href="https://www.youtube.com/" target="_blank"><i class="manisa-youtube"></i></a> <!-- You Can Edit the link here -->
+                <a href="https://www.dribbble.com/" target="_blank"><i class="manisa-dribbble"></i></a> <!-- You Can Edit the link here -->
+            </div>
+            <a href="#">
+                <span class="bg_logo"></span>
+                <!-- You Can Edit the image on main.css file just search ( bg_logo ) -->
+            </a>
+            <div class="copyright">
+                <p>© Copyright 2017. </p>
+                <p>All Right Reserved By <span>Bouthaina</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End Footer -->
+    <!-- Start SrollTop -->
+
+    <div class="scrolltop">
+        <i class="fa fa-angle-double-up"></i>
+    </div>
+
+    <!-- End SrollTop -->
+    <!-- Start Loading -->
+
+    <div class="loading-overlay">
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+        </div>
+    </div>
+
+    <!-- End Loading -->
+
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,1873 @@
+/*
+***************************************************** /
+
+* Theme Name: Manisa
+
+* Theme URI: http://manisa.eb2a.com/
+
+* Author: Bouthaina
+
+* Author URI: https://themeforest.net/user/bouthaina09
+
+* Description:  Manisa - Personal One Page Template
+
+* Version: 1.0.0
+
+* Tags: html5, css3, jquery, bootstrap, theme, template, modern, responsive, cv, resume
+
+*****************************************************/
+
+/*
+|------------------------------------------------------
+| CSS INDEX
+|------------------------------------------------------
+
+1. GLOBAL STYLESHEET
+
+2. NAVBAR SECTION
+
+3. HEADER SECTION
+
+4. ABOUT SECTION
+
+5. JOBS & EDUCATION SECTION
+
+6. SERVICES SECTION
+
+7. STAT SECTION
+
+8. PORTFOLIO SECTION
+
+9. TESTIM SECTION
+
+10. PRICES SECTION
+
+11. CLIENT SECTION
+
+12. BLOG SECTION
+
+13. CONTACT SECTION
+
+14. FOOTER
+
+
+/*==========================================================
+
+                    1. START GLOBAL STYLESHEET
+
+===========================================================*/
+
+
+/*
+	Import
+	------------------------------------------------
+*/
+
+@import 'mixins';
+@import 'placeholders';
+
+* {
+    @include box-sizing;
+}
+
+a:hover,
+a:focus,
+a {
+    text-decoration: none;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;;
+    -moz-font-smoothing: antialiased;;
+    -ms-font-smoothing: antialiased;;
+    -o-font-smoothing: antialiased;;
+    font-smoothing: antialiased;
+    overflow: hidden;
+    overflow-x: hidden!important;
+}
+
+.pattaya {
+    font-family: 'Pattaya', sans-serif;
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+section {
+    padding: 80px 0;
+}
+
+.title {
+    margin-bottom: 60px;
+    h2 {
+        letter-spacing: 1px;
+    }
+}
+
+.btn-manisa {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin: 40px auto 0;
+    padding: 9px 36px;
+    text-align: center;
+    color: #fff!important;
+    border-radius: 23px;
+    font-size: 17px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    @include animate( all, 320ms, ease-in );
+    &:focus,
+    &:hover {
+        color: #fff;
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+        transform: translate( -50% , -55%);
+    }
+}
+
+/*==========================================================
+
+                   START SOCIAL MEDIA STYLESHEET
+
+===========================================================*/
+
+.social-media {
+    position: fixed;
+    top: 70%;
+    transform: translateY(-50%);
+    right: -75px;
+    z-index: 99;
+    background-color: #fff;
+    padding: 11px 7px;
+    @include animate( all, 320ms, cubic-bezier(0.13,-0.24, 0.35, 1.36) );
+    a {
+        color: #333;
+        display: block;
+        padding: 10px 8px;
+        transform: translateX(0);
+        @include animate( all, 320ms, ease-in-out );
+        &:hover {
+            transform: translateX(-20%);
+        }
+    }
+    
+    &.open-social {
+        right: 0;
+    }
+}
+
+
+/*==========================================================
+
+                    2. START NAVBAR STYLESHEET
+
+===========================================================*/
+
+.navbar {
+    box-shadow: 0 0 15px rgba(51, 51, 51, 0.15);
+    background-color: #fff;
+}
+
+.nav-item {
+    margin: 0 15px;
+    position: relative;
+    a {
+        font-size: 15px;
+        color: #333;
+    }
+}
+
+.navbar-brand img {
+    width: 150px;
+    max-width: 100%;
+}
+
+
+.navbar-toggler {
+    width: 50px;
+    height: 45px;
+    display: inline-block;
+    position: fixed;
+    top: 7px;
+    right: 20px;
+    z-index: 2;
+    cursor: pointer;
+    border: none;
+    .menu {
+        width: 30px;
+        height: 21px;
+        position: relative;
+        top: 0;
+        left: 0;
+        .line1,
+        .line2,
+        .line3 {
+            position: absolute;
+            background-color: #333;
+            width: 100%;
+            height: 2px;
+            left: -2px;
+            border-radius: 15px;
+            @include animate( all, 320ms, cubic-bezier(0.42, 0, 0.38, 1.54) );
+        }
+        .line1 {
+            top: 2px;
+        }
+        .line2 {
+            top: 10px;
+        }
+        .line3 {
+            top: 18px;
+        }
+    }
+}
+
+.navbar-toggler .menu.toggle {
+    .line1,
+    .line2,
+    .line3 {
+        top: 10px;
+    }
+    .line1 {
+        @include transform ( rotate(45deg) );
+    }
+    .line2 ,
+    .line3 {
+        @include transform ( rotate(-45deg) );
+    }   
+
+}
+
+
+a {
+    .bg_logo {
+        background-image: url(http://via.placeholder.com/231x58); /* Here The Light Logo */
+        background-size: 120px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 142px;
+        height: 35px;
+        display: inline-block;
+    }
+    .bg_logo_dark {
+        background-image: url(http://via.placeholder.com/231x58); /* Here The Dark Logo */
+        background-repeat: no-repeat;
+    }
+    .bg_logo_light {
+        background-image: url(http://via.placeholder.com/231x58); /* Here The Light Logo */
+        background-repeat: no-repeat;
+    }
+}
+
+/*==========================================================
+
+                    3. START HEADER STYLESHEET
+
+===========================================================*/
+
+.header {
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(http://via.placeholder.com/3000x2000); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .title {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -45%);
+        text-align: center;
+        z-index: 2;
+        h1 {
+            color: #fff;
+            font-size: 4.3rem;
+        }
+    }
+    .down a i {
+        text-decoration: none;
+        color: #ededf5;
+        display: inline-block;
+        position: absolute;
+        bottom: 35px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 35px;
+        cursor: pointer;
+        animation: translate 2.5s ease-in-out infinite;
+    }    
+    @keyframes translate {
+        0% {
+            opacity: .9
+        }
+        50% {
+            @include transform ( translate(-50%, 9px) );
+            opacity: 0.3;
+        }
+        100% {
+            opacity: .6;
+
+        }
+        100% {
+            opacity: .9;
+
+        }
+    }
+}
+
+.typed-cursor, .type {
+    display: inline;
+    font-weight: 300;
+    font-size: 21px;
+    color: #fff;
+}
+
+/* Start Slider Background */
+
+.header .slider {
+    height: 100vh;
+    .overlay-home {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(51,51,51,0.5)
+    }
+    .slider1 {
+        background-image: url(http://via.placeholder.com/3000x1600); /* Here You Can Edit the image of the Slider 1  */
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    .slider2 {
+        background-image: url(http://via.placeholder.com/3000x1600); /* Here You Can Edit the image of the Slider 2  */
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    .slider3 {
+        background-image: url(http://via.placeholder.com/3000x1600); /* Here You Can Edit the image of the Slider 3  */
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    .slick-prev,
+    .slick-next {
+        position: absolute;
+        bottom: 39px;
+        z-index: 99;
+        font-size: 43px;
+        font-weight: lighter;
+        cursor: pointer;
+        background-color: rgba(255,255,255,0.5);
+        border-radius: 50px;
+        height: 45px;
+        width: 45px;
+        line-height: 48px;
+        text-align: center;
+        padding: 0;
+        color: #444;
+        @include animate ( all, 500ms, ease-in-out);
+        &:hover {
+            background-color: #FFF;
+            color: #333;
+        }
+    }
+    .slick-prev {
+        right: 160px;
+    }
+    .slick-next {
+        right: 100px;
+    }
+}
+
+/* End Slider Background */
+
+/* Start Paralax Background */
+
+.header-paralax {
+    background-image: url(http://via.placeholder.com/2500x1500); /* Here You Can Edit the image of Header (Background Particles)  */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* End Paralax Background */
+
+/* Start Particles Background */
+
+.header .particles {
+    background-image: url(http://via.placeholder.com/2500x1500); /* Here You Can Edit the image of Header (Background Particles)  */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+}
+
+.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+}
+
+/* End Particles Background */
+
+/* Start Youtube Background */
+
+.header {
+    overflow: hidden;
+}
+
+.youtube {
+    #bg-video{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -999;
+    width: 1386px;
+    height: 780px;
+    background-position: center center;
+    }
+    .overlay-video {
+        position: absolute;
+        top: 0;
+        background-color: rgba(255,255,255,0.1);
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+
+
+/* End Youtube Background */
+
+/*==========================================================
+
+                    4. START ABOUT STYLESHEET
+
+===========================================================*/
+
+.about {
+    .about-img { 
+        background-image: url(http://via.placeholder.com/2500x1500); /* Here You can edit your personal image */
+        height: 350px;
+        width: 100%;
+        background-attachment: fixed;
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include border-radius (5px);
+    }
+    .tabs-about {
+        .tab-content {
+            .tab-pane {
+                padding: 30px 20px 0;
+                p {
+                    font-size: 14px;
+                    color: #666;
+                }
+                .signature {
+                    max-width: 119px;
+                }
+                &.profile {
+                    .title-info {
+                        max-width: 145px;
+                        width: 100%;
+                        display: inline-block;
+                    }
+                    h6 {
+                        padding: 6px 0;
+                        font-size: 15px;
+                        span{
+                            &:last-child {
+                                color: #777;
+                            }
+                        }
+                    }
+                }
+                .skills {
+                    padding: 0 30px;
+                    .progress-text {
+                        color: #333;
+                        margin-bottom: 8px;
+                        line-height: 15px;
+                        font-size: 15px;
+                    }
+
+                    .progress {
+                        background-color: transparent;
+                        border-radius: 0;
+                        box-shadow: none;
+                        height: 4px;
+                        margin-bottom: 15px;
+                        overflow: visible;
+                        .progress-bar {
+                            float: left;
+                            width: 0;
+                            height: 100%;
+                            font-size: 12px;
+                            line-height: 20px;
+                            color: #fff;
+                            text-align: center;
+                            position: relative;
+                            -webkit-transition: all 1.5s ease 0.3s;
+                            transition: all 1.5s ease 0.3s;
+                            color: inherit;
+                            opacity: 0;
+                            &:before {
+                                content: attr(data-present);
+                                position: absolute;
+                                right: 0;
+                                top: -24px;
+                                color: inherit;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        margin-bottom: 0; 
+                    }
+                }
+            }
+        }
+        .nav-item {
+            background-color: #fff;
+            margin-bottom: 0;
+            margin: 0 auto 0;
+        }
+        .nav-link {
+            width: 109px;
+            &:hover {
+                border-color: transparent;
+            }
+            i {
+                font-size: 19px;
+                display: block;
+                padding-bottom: 9px;
+                @include animate( all, 220ms, ease-in-out );
+            }
+            span {
+                transform: translateY(0);
+                display: inline-block;
+                @include animate( all, 220ms, ease-in-out );
+            }
+        }
+        .nav-link.active {
+            background-color: transparent;
+            border: none;
+            &:after {
+                content: "";
+                background: #fff;
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                left: 50%;
+                bottom: -7px;
+                margin-left: -6px;
+                transform: rotate(45deg);
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 50%;
+                bottom: 0px;
+                left: 5px;
+                right: 5px;
+                border-radius: 100px / 10px;
+                opacity: 0.7;
+            }
+            span {
+                transform: translateY(-20%);
+                display: inline-block;
+            }
+        }
+    }
+    
+}
+
+/*==========================================================
+
+                    5. START JOBS & EDUCATION STYLESHEET
+
+===========================================================*/
+
+.educ {
+    background-color: #FAFAFA;
+    width: 100%;
+    .education {
+        .title {
+            position: relative;
+            h3 {
+                padding-bottom: 30px;
+            }
+            &:before {
+                content: '';
+                height: 0;
+                width: 3px;
+                position: absolute;
+                top: 100px;
+                left: 11px;
+            }
+            &:after {
+                content: '';
+                height: 3px;
+                width: 20px;
+                position: absolute;
+                bottom: -10px;
+                left: 3px;
+                opacity: 0;
+            }
+            .infos-educ {
+                position: relative;
+                overflow: hidden;
+                opacity: 0;
+                margin-bottom: 12%;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+                .roundtimeline {
+                    width: 27px;
+                    height: 27px;
+                    position: absolute;
+                    top: 22px;
+                    left: -1px;
+                    border-radius: 50%;
+                    border: 5px solid #f8f8f8;
+                }
+                .info-timeline {
+                    position: relative;
+                    background-color: #fff;
+                    padding: 20px;
+                    max-width: 83%;
+                    margin-left: -85%;
+                    @include animate( all, 900ms, ease-in-out );
+                    z-index: -1;
+                    box-shadow: -2px 7px 27px rgba(177, 177, 177, 0.1);
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 23px;
+                        left: -13px;
+                        background: #fff;
+                        width: 25px;
+                        height: 25px;
+                        transform: rotate(-45deg);
+                    }
+                    h5 {
+                        font-size: 22px;
+                        margin-bottom: 1px;
+                    }
+                    p {
+                        margin-bottom: 0;
+                        color: #777;
+                        font-size: 15px;
+                    }
+                    span {
+                        color: #aaa;
+                        padding-bottom: 10px;
+                        display: inline-block;
+                        font-size: 13px;
+                        letter-spacing: 0.6px;
+                        font-weight: lighter;
+                    }
+                    .timeline-de {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        height: 100%;
+                        width: 11px;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+.open-timeline {
+    visibility: visible;
+    opacity: 1;
+    .infos-educ {
+        opacity: 0;
+        &:nth-of-type(1) {
+            animation-name : firstimeline;
+            animation-duration : 700ms;
+            animation-delay: 50ms;
+            animation-timing-function : ease-in-out;
+            animation-fill-mode : forwards;
+            .info-timeline {
+                animation-name : slidetimeline;
+                animation-duration : 1200ms;
+                animation-delay: 50ms;
+                animation-timing-function : ease-in-out;
+                animation-fill-mode : forwards;
+                margin-left: 48px;
+            }
+            @keyframes slidetimeline {
+                0% {
+                    margin-left: -85%;
+                }
+                100% {
+                    margin-left: 48px;
+                }
+            }
+        }
+
+        @keyframes firstimeline {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @for $i from 2 through 6 {
+            &:nth-of-type(#{$i}) {
+                animation-name : timeline;
+                animation-duration : 700ms;
+                animation-delay: (800ms * $i);
+                animation-timing-function : ease-in-out;
+                animation-fill-mode : forwards;
+                .info-timeline {
+                    animation-name : slidetimeline;
+                    animation-duration : 1200ms;
+                    animation-delay: (900ms * $i);
+                    animation-timing-function : ease-in-out;
+                    animation-fill-mode : forwards;
+                    margin-left: 48px;
+                }
+                @keyframes slidetimeline {
+                    0% {
+                        margin-left: -85%;
+                    }
+                    100% {
+                        margin-left: 48px;
+                    }
+                }
+            }
+            @keyframes timeline {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &:before {
+        animation-name : heightline;
+        animation-duration : 1500ms;
+        animation-delay: 300ms;
+        animation-timing-function : ease-in-out;
+        animation-fill-mode : forwards;
+    }   
+    
+    @keyframes heightline {
+        0% {
+            opacity: 0;
+            height: 0;
+        }
+        100% {
+            opacity: 1;
+            height: 85%;
+        }
+    }
+    &:after {
+        animation-name : firstimeline;
+        animation-duration : 1500ms;
+        animation-delay: 300ms;
+        animation-timing-function : ease-in-out;
+        animation-fill-mode : forwards;
+    }
+}
+
+/*==========================================================
+
+                    6. START SERVICES STYLESHEET
+
+===========================================================*/
+
+.serv {
+    .info-serv {
+        margin-bottom: 40px;
+        h5 {
+            font-size: 22px;
+        }
+        i {
+            font-size: 34px;
+            width: 110px;
+            height: 110px;
+            line-height: 110px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+            background-color: #F8F8F8;
+            display: inline-block;
+            box-shadow: -1px 9px 1px #eee;
+            @include animate( all, 320ms, ease-in-out );
+            &:hover {
+                box-shadow: -1px 4px 1px #eee;
+            }
+        }
+        p {
+            color: #777;
+            font-size: 14px;
+        }
+    }
+    .last-info-serv {
+        margin-bottom: 0;
+    }
+}
+
+/*==========================================================
+
+                    7. START STAT  STYLESHEET
+
+===========================================================*/
+
+.stat {
+    position: relative;
+    background-image: url(http://via.placeholder.com/2500x1500);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    width: 100%;
+    height: auto;
+    color: #FFF;
+    padding: 0;
+    .overlay {
+        padding: 60px 0;
+    }
+    i {
+        display: block;
+        font-size: 26px;
+        margin-bottom: 8px;
+    }
+
+    span {
+        font-size: 33px;
+        font-weight: 600;
+        letter-spacing: 3px;
+    }
+
+    p {
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 200;
+        margin-top: 1px;
+        margin-bottom: 0;
+    }
+}
+
+
+
+/*==========================================================
+
+                    8. START PORTFOLIO STYLESHEET
+
+===========================================================*/
+
+.portfolio {
+    .shuffle {
+        margin-bottom: 40px;
+        ul {
+            li {
+                display: inline-block;
+                margin-right: 10px;
+                cursor: pointer;
+                padding: 5px 22px;
+                border-radius: 25px;
+                &.active {
+                    color: #FFF;
+                    box-shadow: 0px 1px 8px #ddd;
+                    @include animate( all, 320ms, ease-in-out );
+                    &:hover {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+        
+    }
+    .gallery {
+        padding-bottom: 70px;
+        .col-lg-4 {
+            @include animate( all, 320ms, ease-in-out );
+        }
+        .item {
+            position: relative;
+            margin-bottom: 20px;
+            overflow: hidden;
+            @include animate( all, 320ms, ease-in-out );
+            .over {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                color: #FFF;
+                background-color: rgba(0,0,0,0.6);
+                opacity: 0;
+                z-index: 1;
+                @include animate( all, 320ms, ease-in-out );
+                .info-img {
+                    position: absolute;
+                    top: 15%;
+                    left: 20px;
+                    text-align: left;
+                    h4 {
+                        font-size: 34px;
+                        margin-bottom: -3px;
+                    }
+                    span {
+                        font-size: 18px;
+                    }
+                }
+                a {
+                    position: absolute;
+                    bottom: 15px;
+                    right: 15px;
+                    font-size: 21px;
+                    color: #fff;
+                }
+            }
+            img {
+                @include animate( all, 600ms, ease-in-out );
+                @include transform( scale(1) );
+            }
+            &:hover {
+                img {
+                    width: 100%;
+                    @include transform( scale(1.2) );
+                }
+                .over {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.show-less {
+    display: none;
+}
+
+.less {
+    display: none;
+}
+
+/*==========================================================
+
+                    9. START TESTIM STYLESHEET
+
+===========================================================*/
+
+.testim {
+    padding-bottom: 0;
+    padding-top: 0;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    .slider-arrows {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 280px;
+        max-width: 100%;
+        z-index: 2;
+        max-width: 480px;
+        width: 100%;
+    }
+    .slick-arrow {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 37px;
+        z-index: 2;
+        background-color: #1E1E1E;
+        color: #fff;
+        width: 60px;
+        height: 55px;
+        line-height: 55px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .slick-prev {
+        top: -30px;
+    }
+    .slick-next {
+        bottom: -30px;
+    }
+    .myslide {
+        position: absolute;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        .container {
+            position: relative;
+            height: 100vh;
+            .quote-client {
+                position: relative;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                background-color: #fff;
+                max-width: 480px;
+                height: 280px;
+                .parg-quote {
+                    position: absolute;
+                    top: 50%;
+                    padding: 0 4%;
+                    @include transform ( translateY(-50%) );
+                }
+                p {
+                    font-size: 23px;
+                    font-style: italic;
+                }
+                .name {
+                    font-size: 17px;
+                    font-weight: 600;
+                    letter-spacing: 0.8px;
+                }
+                .fa-quote-left {
+                    position: absolute;
+                    font-size: 30px;
+                    top: 30px;
+                    left: 30px;
+                }
+                .fa-quote-right {
+                    position: absolute;
+                    font-size: 30px;
+                    bottom: 30px;
+                    right: 30px;
+                }
+            }
+        }
+    }
+    .slide1 {
+        background-image: url(http://via.placeholder.com/2500x1500); /* image for testimonial 1 */
+    }
+    .slide2 {
+        background-image: url(http://via.placeholder.com/2500x1500); /* image for testimonial 2 */
+    }
+    .slide3 {
+        background-image: url(http://via.placeholder.com/2500x1500); /* image for testimonial 3 */
+    }
+}
+
+
+/*==========================================================
+
+                    10. START PRICES STYLESHEET
+
+===========================================================*/
+
+.price {
+    background-color: #fafafa;
+    .pricing-table {
+        position: relative;
+        width: 90%;
+        height: 460px;
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 36px 0;
+        margin: auto;
+        margin-bottom: 21px;
+        @include animate (all, 500ms, ease-in-out);
+        @include transform ( translateY(0) );
+        &:hover {
+            @include transform ( translateY(-10px) );
+            box-shadow: 1px 8px 31px rgba(177,177,177,0.2);
+        }
+        hr {
+            width: 80%;
+            border-top: 1px solid #eee;
+        }
+        .myprice {
+            font-size: 60px;
+            position: relative;
+            &:after {
+                content: '$';
+                position: absolute;
+                top: -6px;
+                right: -21px;
+                font-size: 35px;
+            }
+        }
+        .description {
+            display: block;
+            color: rgba(47,47,47,0.5);
+            margin-top: -12px;
+            margin-bottom: 27px;
+        }
+        .pricing-list {
+            margin-bottom: 10px;
+            li {
+                padding: 10px 0;
+                font-size: 15px;
+                color: #333;
+            }
+        }
+        .pricing-button {
+            padding: 10px 40px;
+            position: absolute;
+            bottom: -22px;
+            margin: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 25px;
+            width: 155px;
+            a {
+                color: #fff;
+            }
+        }
+    }
+}
+
+/*==========================================================
+
+                    11. START CLIENT STYLESHEET
+
+===========================================================*/
+
+.client {
+    background-image: url(http://via.placeholder.com/2500x1500);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    width: 100%;
+    height: auto;
+    padding-bottom: 0;
+    padding-top: 0;
+    .overlay {
+        padding: 30px 0;
+    }
+}
+
+/*==========================================================
+
+                    12. START BLOG STYLESHEET
+
+===========================================================*/
+
+.blog {
+    margin-bottom: 100px;
+    .title {
+        margin-bottom: 70px;
+    }
+    .post {
+        position: relative;
+        background-color: #fff;
+        width: 96%;
+        height: auto;
+        border: 1px solid #eee;
+        margin: auto;
+        a {
+            color: #fff;
+        }
+        .category-post {
+            position: absolute;
+            top: -17px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            padding: 5px 24px;
+            border-radius: 27px;
+            z-index: 2;
+            a {
+                font-size: 15px;
+            }
+        }
+        .img-post {
+            width: 100%;
+            max-height: 222px;
+            overflow: hidden;
+            img {
+                @include animate (all, 700ms, ease-in-out);
+                @include transform ( scale(1) rotate(0) );
+                &:hover {
+                    @include transform ( scale(1.05) rotate(2deg) );
+                }
+            }
+        }
+        .infos-post {
+            h3 {
+                font-size: 25px;
+                margin-top: 15px;
+                margin-bottom: 4px;
+                padding: 0px 6px;
+                a {
+                    color: #333;
+                }
+            }
+            span {
+                color: rgba(0,0,0,0.4);
+                font-size: 14px;
+            }
+            hr {
+                width: 80%;
+                margin: 23px auto;
+                display: block;
+                border-top: 1px solid #eee;
+            }
+            p {
+                font-size: 15px;
+                padding: 0 16px 30px;
+                color: #777;
+                line-height: 1.7;
+            }
+        }
+        .tags-post,
+        .comments-post {
+            position: absolute;
+            bottom: -13px;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 27px;
+            z-index: 2;
+        }
+        .tags-post {
+            left: 6px;
+            i {
+                font-size: 13px;
+                margin-right: 7px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+        .comments-post {
+            right: 6px;
+            span {
+                font-size: 15px;
+                margin-right: 7px;
+            }
+            i {
+                font-size: 14px;
+            }
+        }
+    }
+    .btn-manisa {
+        margin: 80px auto 0;
+        font-size: 18px;
+        padding: 6px 45px;
+    }
+}
+
+/*==========================================================
+
+                    13. START CONTACT STYLESHEET
+
+===========================================================*/
+
+.contact {
+    background-color: #fafafa;
+    padding-bottom: 0;
+    .contact-content {
+        margin-bottom: 60px;
+        i {
+            display: block;
+            font-size: 43px;
+            margin-bottom: 10px;
+        }
+        span {
+            font-size: 17px;
+        }
+    }
+    .contact-map {
+        .contact-form {
+            position: absolute;
+            top: 0;
+            right: 10%;
+            max-width: 380px;
+            width: 100%;
+            height: 100%;
+            background-color: #FFF;
+        }
+        form {
+            max-width: 80%;
+            margin: 45px auto;
+            .form-control {
+                font-size: 14px;
+            }
+            .form-group {
+                margin-bottom: 1.2rem;
+                textarea {
+                    height: 120px;
+                }
+            }
+            .btn {
+                color: #fff;
+                cursor: pointer;
+                border-radius: 25px;
+            }
+        }
+    }
+}
+
+/* Start Map */
+
+.google-wrapper {
+    position: relative;
+}
+
+#google-map,
+.contact iframe {
+    border: 0;
+    width: 100%;
+    height: 430px;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+    filter: gray; /* IE6-9 */
+      -webkit-filter: grayscale(99%); /* Chrome 19+ & Safari 6+ */
+      -webkit-backface-visibility: hidden;  /* Fix for transition flickering */
+}
+
+.scrolloff {
+    pointer-events: none;
+}
+
+.maps {
+    padding: 0!important;
+}
+
+/* End Map */
+
+/*==========================================================
+
+                    14. START FOOTER STYLESHEET
+
+===========================================================*/
+
+footer {
+    background-color: #fafafa;
+    a {
+        span {
+            padding-bottom: 70px;
+        }
+    }
+    p {
+        font-size: 12px;
+        margin: 0;
+        font-weight: lighter;
+        letter-spacing: 0.7px;
+        &:last-of-type {
+            padding-bottom: 25px;
+        }
+    }
+    .social-media-footer {
+        padding: 70px 0 20px;
+        a {
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            display: inline-block;
+            margin-right: 10px;
+            @include animate (all, 400ms, ease-in-out);
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+/*==========================================================
+
+                    15. START BLOG PAGE STYLESHEET
+
+===========================================================*/
+
+.header-blog {
+    background-image: url(http://via.placeholder.com/2500x1500); /* here image Header Blog Page */
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    padding-top: 0;
+    .typed-cursor,
+    .type {
+        display: none;
+    }
+    h1 {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 50px;
+        text-align: center;
+        line-height: 400px;
+    }
+}
+
+.blog-page {
+    margin-bottom: 0;
+    .col-lg-6 {
+        margin-bottom: 80px;
+        &:last-child {
+            margin-bottom: 20px;
+        }
+    }
+    .post {
+        width: 80%;
+    }
+}
+
+.paginate {
+    padding-bottom: 60px;
+    padding-top: 0;
+    a {
+        color: #333;
+        padding-left: 10px;
+    }
+}
+
+/*==========================================================
+
+                    15. START BLOG POST STYLESHEET
+
+===========================================================*/
+
+.header-blog-post {
+    background-image: url(http://via.placeholder.com/2500x1500); /* image for the Header Post */ 
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    padding-top: 0;
+    .type {
+        display: none;
+    }
+    .typed-cursor {
+        display: none;
+    }
+    .title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform ( translate(-50%, -50%) );
+        color: #fff;
+        text-transform: uppercase;
+    }
+}
+
+.content-post {
+    padding-top: 0;
+    padding-bottom: 0;
+    hr {
+        max-width: 80%;
+    }
+    .mycontent {
+        padding: 20px 7%;
+        p {
+            line-height: 1.8;
+            margin-top: 1rem;
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+        .quote-content {
+            margin-left: 10%;
+            padding: 10px 30px;
+            margin: 30px 10%;
+            q {
+                font-style: italic;
+                font-size: 18px;
+            }
+            span {
+                display: block;
+                margin: 7px 0 0;
+                font-size: 16px;
+                font-weight: bold;
+                font-style: italic;
+            }
+        }
+        iframe {
+            height: 535px;
+        }
+    }
+    .author-post {
+        padding: 25px 12%;
+        .author-img {
+            background-image: url(http://via.placeholder.com/200x200);
+            background-size: cover;
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+        }
+        .author-info {
+            padding-top: 24px;
+            p {
+                padding-top: 5px;
+                line-height: 1.7;
+                
+            }
+            h3 {
+                span {
+                    color: #444;
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+    .comments-post {
+        margin: auto;
+        max-width: 700px;
+        .num-comments {
+            display: block;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 35px;
+        }
+        .comments {
+            li {
+                margin-bottom: 32px;
+                &:last-of-type {
+                    margin-bottom: 50px;
+                }
+            }
+            hr {
+                margin: 40px;
+                border-top: 1px solid #eee;
+            }
+            .avatar {
+                width: 70px;
+                height: 70px;
+                float: left;
+                img {
+                    border-radius: 50%;
+                }
+            }
+            .content {
+                position: relative;
+                padding-left: 90px;
+                .reply {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    color: #fff;
+                    padding: 3px 15px;
+                    border-radius: 27px;
+                    font-size: 14px;
+                }
+                .name {
+                    font-size: 17px;
+                }
+                .date {
+                    font-size: 13px;
+                    font-style: italic;
+                    color: #777;
+                    display: block;
+                }
+                p {
+                    margin-top: 12px;
+                    color: #333;
+                }
+            }
+        }
+    }
+    .comment-respond {
+        margin-bottom: 40px;
+        h4 {
+            margin: 50px 0 35px;
+        }
+        .form-control {
+            font-size: 15px;
+            border-radius: 2px;
+        }
+        .content {
+            button {
+                color: #fff;
+                cursor: pointer;
+            }
+            form {
+                width: 50%;
+                margin: auto;
+                .form-group {
+                    margin-bottom: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+/* Start ScrollTop */
+
+.scrolltop {
+    position: relative;
+    display: none;
+    i {
+        z-index: 999;
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        background-color: #333;
+        background-color: rgba(0,0,0,.3);
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+        color: #FFF;
+        top: auto;
+        left: auto;
+        right: 30px;
+        bottom: 50px;
+        cursor: pointer;
+        border-radius: 2px;
+    }
+}
+
+/* End ScrollTop */
+
+
+/* Start Section Tool Box */
+
+.option-box {
+    position: fixed;
+    top: 120px;
+    right: 0;
+    z-index: 9999;
+    text-align: center;
+    padding: 0;
+    .color-option {
+        position: fixed;
+        right: -185px;
+        background-color: #fff;
+        width: 180px;
+        box-shadow: 0px 2px 9px rgba(177, 177, 177, 0.2);
+        ul {
+            margin: 12px auto 9px;
+            li {
+                width: 23px;
+                height: 23px;
+                display: inline-block;
+                margin-right: 10px;
+                cursor: pointer;
+                border-radius: 50%;
+                border: 1px solid #333;
+                span {
+                    display: block;
+                    margin: 25px -7px;
+                }
+            }
+        }
+        .dl li {
+            margin: 6px 14px;
+        }
+    }
+    .gear-check {
+        padding: 9px 19px;
+        color: #333;
+        cursor: pointer;
+        background-color: #FFF;
+        font-size: 30px;
+        border-radius: 2px 0 0 2px;
+        box-shadow: 0px 2px 9px rgba(177, 177, 177, 0.2);
+    }
+}
+
+/* End Section Tool Box */
+
+/* Start Loading */
+
+.loading-overlay {
+    background: #FFF;
+    color: #444;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+
+.sk-cube-grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform ( translate(-50%, -50%) );
+    width: 50px;
+    height: 50px;
+}
+
+.sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: #333;
+    float: left;
+    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
+}
+
+/* Start Style Demo */
+
+.header-demo {
+    text-align: center;
+    background-color: #1d1d1d;
+    color: #FFF;
+    height: 570px;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    .overlay-demo {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        padding: 0;
+        height: 570px;
+        width: 100%;
+        background-color: rgba(0,0,0,0.5)
+    }
+     h2 {
+        color: #333;
+        background-color: #fff;
+        border-bottom: 1px solid #bbb;
+        width: 260px;
+        height: 56px;
+        line-height: 56px;
+        margin: 10px auto 35px;
+        text-transform: uppercase;
+        font-size: 28px;
+        border-radius: 30px;
+    }
+    .title-demo {
+        position: relative;
+        margin-bottom: 42px;
+        height: 610px;
+        .demo {
+            color: #333;
+            button {
+                padding: 8px 28px;
+            }
+            &:hover button {
+                background-color: #FFF;
+                color: #333;
+            }
+        }
+        h1 {
+            font-family: 'Pattaya', sans-serif;
+            font-size: 82px;
+            padding-top: 12%;
+        }
+        h4 {
+            font-size: 20px;
+            font-weight: 200;
+            letter-spacing: 0.4px;
+            margin-bottom: 120px;
+        }
+    }
+    .demo1 {
+        margin: 0 30px;
+        overflow: hidden;
+        img {
+            @include transform ( translateY(0) );
+            @include animate (all, 600ms, ease-in-out);
+        }
+        &:hover img {
+            @include transform ( translateY(-4%) );
+        }
+        a {
+            color: #333;
+        }
+        button {
+            text-transform: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            margin-bottom: 50px;
+            margin-top: 13px;
+            @include animate (all, 500ms, ease-in-out);
+        }
+        h3 {
+            font-size: 17px;
+            background-color: #ffffff;
+            color: #1d1d1d;
+            margin: 20px auto;
+            height: 48px;
+            line-height: 48px;
+            border-radius: 30px;
+            padding: 0 24px;
+            display: inline-block;
+            letter-spacing: 1px;
+            border: 1px solid #eee;
+        }
+    }
+    .title-demo .demo button,
+    .demo1 button {
+        background-color: transparent;
+        border: 2px solid #FFF;
+        color: #FFF;
+        border-radius: 3px;
+        cursor: pointer;
+        @include animate (all, 500ms, ease-in-out);
+    }
+    .classic button {
+        background-color: #444;
+        color: #FFF;
+    }
+}
+
+.light-dark-demo,
+.multi-header-demo {
+    margin-top: 40px;
+}
+
+/* End Style Demo */
